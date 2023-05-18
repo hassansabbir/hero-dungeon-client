@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const { createNewUser } = useContext(AuthContext);
@@ -19,7 +20,19 @@ const Register = () => {
       .then((res) => {
         const user = res.user;
         console.log(user);
+        updateUserDetails(user, name, photo);
       })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  const updateUserDetails = (user, name, photo) => {
+    updateProfile(user, {
+      displayName: name,
+      photoURL: photo,
+    })
+      .then(() => {})
       .catch((err) => {
         console.log(err);
       });

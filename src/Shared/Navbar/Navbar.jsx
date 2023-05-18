@@ -66,7 +66,16 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navBarItems}</ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end space-x-5">
+        <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
+          {user && (
+            <img
+              className="w-12 h-12 rounded-full"
+              src={user.photoURL}
+              alt=""
+            />
+          )}
+        </div>
         {user ? (
           <Link to="/">
             <button

@@ -1,13 +1,16 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { GoogleAuthProvider } from "firebase/auth";
 
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleSignIn } = useContext(AuthContext);
+  const [error, setError] = useState("");
 
   const handleLogin = (event) => {
     event.preventDefault();
+    setError("");
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
@@ -18,7 +21,24 @@ const Login = () => {
         const user = res.user;
         console.log(user);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        if (err.message === "Firebase: Error (auth/wrong-password).") {
+          setError("Wrong password! Please try again.");
+        }
+      });
+  };
+
+  const googleProvider = new GoogleAuthProvider();
+  const handleGoogleLogIn = () => {
+    googleSignIn(googleProvider)
+      .then((res) => {
+        const user = res.user;
+        console.log(user);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
@@ -62,8 +82,12 @@ const Login = () => {
                 </a>
               </label>
             </div>
+            <p className="text-red-500 font-bold">{error}</p>
             <div className="divider">OR</div>
-            <button className="btn btn-outline gap-2 bg-info border-none">
+            <button
+              onClick={handleGoogleLogIn}
+              className="btn btn-outline gap-2 bg-info border-none"
+            >
               <FaGoogle /> Login with Google
             </button>
             <div className="form-control mt-6">

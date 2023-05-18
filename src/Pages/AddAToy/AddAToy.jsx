@@ -1,6 +1,47 @@
+import { useContext } from "react";
+import { AuthContext } from "../../providers/AuthProvider";
+
 const AddAToy = () => {
+  const { user } = useContext(AuthContext);
+
+  const addAToy = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const photo = form.photo.value;
+    const name = form.name.value;
+    const sellerName = form.sellerName.value;
+    const sellerEmail = form.sellerEmail.value;
+    const category = form.category.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const quantity = form.quantity.value;
+    const details = form.details.value;
+    const newToy = {
+      photo,
+      name,
+      sellerName,
+      sellerEmail,
+      category,
+      price,
+      rating,
+      quantity,
+      details,
+    };
+    console.log(newToy);
+
+    fetch("http://localhost:5000/allToys", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(newToy),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
+
   return (
-    <div className="hero bg-base-200">
+    <form onSubmit={addAToy} className="hero bg-base-200">
       <div className="hero-content  ">
         <div className="card shadow-2xl bg-base-100">
           <h1 className="text-5xl text-purple-600 text-center my-5 font-bold">
@@ -36,6 +77,7 @@ const AddAToy = () => {
               <input
                 type="text"
                 name="sellerName"
+                defaultValue={user?.displayName}
                 placeholder="seller name"
                 className="input input-bordered"
               />
@@ -47,6 +89,7 @@ const AddAToy = () => {
               <input
                 type="text"
                 name="sellerEmail"
+                defaultValue={user?.email}
                 placeholder="seller email"
                 className="input input-bordered"
               />
@@ -91,7 +134,7 @@ const AddAToy = () => {
               <input
                 type="text"
                 name="quantity"
-                placeholder="password"
+                placeholder="quantity"
                 className="input input-bordered"
               />
             </div>
@@ -101,7 +144,8 @@ const AddAToy = () => {
               </label>
               <input
                 type="text"
-                placeholder="password"
+                name="details"
+                placeholder="details"
                 className="input input-bordered"
               />
             </div>
@@ -111,7 +155,7 @@ const AddAToy = () => {
           </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 

@@ -25,6 +25,11 @@ const Navbar = () => {
       <li>
         <Link to="/addAToy">Add A Toy</Link>
       </li>
+      {user?.email && (
+        <li>
+          <Link to="/myToys">My Toys</Link>
+        </li>
+      )}
       <li>
         <Link to="/blogs">Blogs</Link>
       </li>
@@ -76,7 +81,7 @@ const Navbar = () => {
             />
           )}
         </div>
-        {user ? (
+        {user?.email ? (
           <Link to="/">
             <button
               onClick={handleSignOut}

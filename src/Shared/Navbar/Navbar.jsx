@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../../public/Annotation 2023-05-18 093448.png";
+import logo from "../../../public/logo-white.png";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 
@@ -64,7 +64,7 @@ const Navbar = () => {
           </ul>
         </div>
         <img className="w-3/12" src={logo} alt="" />
-        <a className="btn btn-ghost normal-case text-3xl">
+        <a className="btn btn-ghost normal-case md:text-3xl">
           <span className="text-purple-600">Hero</span> Dungeon
         </a>
       </div>

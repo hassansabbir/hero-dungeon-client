@@ -2,8 +2,8 @@ import bannerImg from "../../../../public/banner-img.jpg";
 
 const Banner = () => {
   return (
-    <div className="md:flex justify-center items-center shadow-lg mb-5 rounded">
-      <div className="ml-5">
+    <div className="md:flex  items-center shadow-lg mb-10 rounded">
+      <div className="ml-5 p-10">
         <h1 className="md:text-5xl text-3xl w-11/12 md:w-9/12 font-extrabold">
           <span className="text-purple-600">PowerPacked Heroes:</span> Unleash
           Your Imagination at the Ultimate Action Figure Emporium!

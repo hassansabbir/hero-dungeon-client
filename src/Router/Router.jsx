@@ -21,7 +21,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/allToys",
-        element: <AllToys></AllToys>,
+        element: (
+          <PrivetRout>
+            <AllToys></AllToys>
+          </PrivetRout>
+        ),
         loader: () => fetch("http://localhost:5000/allToys"),
       },
       {

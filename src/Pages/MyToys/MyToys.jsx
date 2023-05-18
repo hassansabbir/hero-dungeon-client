@@ -14,28 +14,34 @@ const MyToys = () => {
   }, []);
 
   return (
-    <div className="overflow-x-auto w-full">
-      <table className="table w-full">
-        {/* head */}
-        <thead>
-          <tr>
-            <th>
-              <label>Delete</label>
-            </th>
-            <th>photo & Name</th>
-            <th>Seller Name & Email</th>
-            <th>Price</th>
-            <th>Quantity</th>
-            <th>Details</th>
-            <th>Edit</th>
-          </tr>
-        </thead>
-        <tbody>
-          {myToys.map((toy) => (
-            <MyToysRow key={toy._id} toy={toy}></MyToysRow>
-          ))}
-        </tbody>
-      </table>
+    <div>
+      <h2 className="text-5xl font-bold text-center">
+        All the Toys added by{" "}
+        <span className="text-purple-600">{user.displayName}</span>
+      </h2>
+      <div className="overflow-x-auto my-10 w-full">
+        <table className="table w-full">
+          {/* head */}
+          <thead>
+            <tr>
+              <th>
+                <label>Delete</label>
+              </th>
+              <th>photo & Name</th>
+              <th>Seller Name & Email</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Details</th>
+              <th>Edit</th>
+            </tr>
+          </thead>
+          <tbody>
+            {myToys.map((toy) => (
+              <MyToysRow key={toy._id} toy={toy}></MyToysRow>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

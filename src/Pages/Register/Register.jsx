@@ -1,9 +1,32 @@
+import { useContext } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Register = () => {
+  const { createNewUser } = useContext(AuthContext);
+
+  const handleRegister = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    const photo = form.photo.value;
+    console.log(name, email, password, photo);
+
+    createNewUser(email, password)
+      .then((res) => {
+        const user = res.user;
+        console.log(user);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
-    <div className="hero min-h-screen">
+    <form onSubmit={handleRegister} className="hero min-h-screen">
       <div className="hero-content flex-col lg:flex-row">
         <div className="text-center lg:text-left">
           <img
@@ -78,7 +101,7 @@ const Register = () => {
           </div>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 

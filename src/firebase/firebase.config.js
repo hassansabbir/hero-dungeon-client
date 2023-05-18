@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDJm0G4ucWpbh7pvsAIyMgngbhhOYrbigY",
-  authDomain: "hero-dungeon-b0407.firebaseapp.com",
-  projectId: "hero-dungeon-b0407",
-  storageBucket: "hero-dungeon-b0407.appspot.com",
-  messagingSenderId: "730961363818",
-  appId: "1:730961363818:web:ba48303c8b831022e79b13",
+  apiKey: import.meta.env.VITE_apiKey,
+  authDomain: import.meta.env.VITE_authDomain,
+  projectId: import.meta.env.VITE_projectId,
+  storageBucket: import.meta.env.VITE_storageBucket,
+  messagingSenderId: import.meta.env.VITE_messagingSenderId,
+  appId: import.meta.env.VITE_appId,
 };
 
 // Initialize Firebase

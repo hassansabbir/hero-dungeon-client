@@ -1,21 +1,51 @@
+import { useLoaderData } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import ToyCard from "./ToyCard";
 
 const ToysSection = () => {
-  return (
-    <Tabs>
-      <TabList>
-        <Tab>Title 1</Tab>
-        <Tab>Title 2</Tab>
-      </TabList>
+  const allToys = useLoaderData();
+  console.log(allToys);
 
-      <TabPanel>
-        <h2>Any content 1</h2>
-      </TabPanel>
-      <TabPanel>
-        <h2>Any content 2</h2>
-      </TabPanel>
-    </Tabs>
+  const avengers = allToys.filter((toy) => toy.category === "Avengers");
+  const marvel = allToys.filter((toy) => toy.category === "Marvel");
+  const transformers = allToys.filter((toy) => toy.category === "Transformers");
+
+  return (
+    <div className="my-10">
+      <h1 className="text-6xl font-bold text-center my-10">
+        Out Products By <span className="text-purple-600">Category</span>
+      </h1>
+      <Tabs>
+        <TabList className="text-center my-10 text-3xl">
+          <Tab>The Avengers</Tab>
+          <Tab>Marvel</Tab>
+          <Tab>Transformers</Tab>
+        </TabList>
+
+        <TabPanel>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            {avengers.map((toy) => (
+              <ToyCard key={toy._id} toy={toy}></ToyCard>
+            ))}
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            {marvel.map((toy) => (
+              <ToyCard key={toy._id} toy={toy}></ToyCard>
+            ))}
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            {transformers.map((toy) => (
+              <ToyCard key={toy._id} toy={toy}></ToyCard>
+            ))}
+          </div>
+        </TabPanel>
+      </Tabs>
+    </div>
   );
 };
 

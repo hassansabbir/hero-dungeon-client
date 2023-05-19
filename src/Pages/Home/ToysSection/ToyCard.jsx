@@ -1,7 +1,8 @@
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ToyCard = ({ toy }) => {
-  const { photo, name, price, rating } = toy;
+  const { _id, photo, name, price, rating } = toy;
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
@@ -20,7 +21,9 @@ const ToyCard = ({ toy }) => {
         </div>
 
         <div className="card-actions">
-          <button className="btn bg-purple-600">View Details</button>
+          <Link to={`/toyDetails/${_id}`}>
+            <button className="btn bg-purple-600">View Details</button>
+          </Link>
         </div>
       </div>
     </div>

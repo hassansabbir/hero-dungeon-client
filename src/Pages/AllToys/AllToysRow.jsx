@@ -1,7 +1,9 @@
 import { FaEye } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const AllToysRow = ({ toy }) => {
   const {
+    _id,
     name,
     photo,
     category,
@@ -38,9 +40,11 @@ const AllToysRow = ({ toy }) => {
         <span className="text-xl">{details.slice(0, 25)}...</span>
       </th>
       <th>
-        <button className="btn ml-5">
-          <FaEye />
-        </button>{" "}
+        <Link to={`/toyDetails/${_id}`}>
+          <button className="btn ml-5">
+            <FaEye />
+          </button>
+        </Link>
         <br />{" "}
       </th>
     </tr>

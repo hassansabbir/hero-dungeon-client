@@ -12,7 +12,7 @@ const MyToys = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
-  }, []);
+  }, [url]);
 
   const handleDelete = (id) => {
     Swal.fire({

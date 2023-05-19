@@ -9,17 +9,28 @@ import Register from "../Pages/Register/Register";
 import PrivetRout from "./PrivetRout";
 import MyToys from "../Pages/MyToys/MyToys";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import UpdateToys from "../Pages/UpdateToys/UpdateToys";
+import ToyDetails from "../Pages/ToyDetails/ToyDetails";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-
     children: [
       {
         path: "/",
         element: <Home></Home>,
         loader: () => fetch("http://localhost:5000/allToys"),
+      },
+      {
+        path: "/toyDetails/:id",
+        element: (
+          <PrivetRout>
+            <ToyDetails></ToyDetails>
+          </PrivetRout>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allToys/${params.id}`),
       },
       {
         path: "/allToys",
@@ -45,6 +56,12 @@ const router = createBrowserRouter([
             <MyToys></MyToys>
           </PrivetRout>
         ),
+      },
+      {
+        path: "/updateToys/:id",
+        element: <UpdateToys></UpdateToys>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allToys/${params.id}`),
       },
       {
         path: "/blogs",

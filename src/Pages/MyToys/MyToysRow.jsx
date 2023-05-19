@@ -1,4 +1,5 @@
 import { FaRegEdit } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const MyToysRow = ({ toy, handleDelete }) => {
   const {
@@ -62,9 +63,11 @@ const MyToysRow = ({ toy, handleDelete }) => {
         <span className="text-xl">{details.slice(0, 25)}...</span>
       </th>
       <th>
-        <button className="btn">
-          <FaRegEdit />
-        </button>{" "}
+        <Link to={`/updateToys/${_id}`}>
+          <button className="btn">
+            <FaRegEdit />
+          </button>
+        </Link>
         <br />{" "}
       </th>
     </tr>

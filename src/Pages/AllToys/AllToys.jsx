@@ -6,6 +6,13 @@ const AllToys = () => {
 
   return (
     <div>
+      <div className="text-center my-10">
+        <input
+          type="text"
+          placeholder="search by name"
+          className="input input-bordered border-purple-600 rounded-2xl w-6/12"
+        />
+      </div>
       <h2 className="text-5xl font-bold text-center">
         Toys added by all users
       </h2>
@@ -14,7 +21,7 @@ const AllToys = () => {
           {/* head */}
           <thead>
             <tr>
-              <th>photo & Name</th>
+              <th>photo, Name & Category</th>
               <th>Seller Name & Email</th>
               <th>Price</th>
               <th>Quantity</th>

@@ -35,7 +35,7 @@ const AllToysRow = ({ toy }) => {
       <td className="text-xl">{price} Taka</td>
       <td className="text-xl">{quantity}</td>
       <th>
-        <span className="text-xl">{details.slice(0, 30)}...</span>
+        <span className="text-xl">{details.slice(0, 25)}...</span>
       </th>
       <th>
         <button className="btn ml-5">

@@ -5,7 +5,7 @@ const ToyCard = ({ toy }) => {
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
-        <img src={photo} alt="Shoes" className="rounded-xl" />
+        <img src={photo} alt="Shoes" className="rounded-xl h-80 w-96" />
       </figure>
       <div className="card-body items-center text-center">
         <h2 className="card-title font-bold text-4xl">{name}</h2>

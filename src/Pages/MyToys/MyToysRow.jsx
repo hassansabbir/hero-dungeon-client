@@ -1,7 +1,8 @@
 import { FaRegEdit } from "react-icons/fa";
 
-const MyToysRow = ({ toy }) => {
+const MyToysRow = ({ toy, handleDelete }) => {
   const {
+    _id,
     name,
     photo,
     category,
@@ -11,10 +12,16 @@ const MyToysRow = ({ toy }) => {
     quantity,
     details,
   } = toy;
+
   return (
     <tr>
       <th>
-        <button className="btn btn-circle">
+        <button
+          onClick={() => {
+            handleDelete(_id);
+          }}
+          className="btn btn-circle"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"

@@ -1,14 +1,33 @@
 import { useLoaderData } from "react-router-dom";
 import AllToysRow from "./AllToysRow";
+import { useState } from "react";
 
 const AllToys = () => {
   const allToys = useLoaderData();
+
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredData, setFilteredData] = useState(allToys);
+
+  const updateTable = (query) => {
+    const lowercaseQuery = query.toLowerCase();
+    const filteredData = allToys.filter((item) =>
+      item.name.toLowerCase().includes(lowercaseQuery)
+    );
+    setFilteredData(filteredData);
+  };
+  const handleSearchChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+    updateTable(query);
+  };
 
   return (
     <div>
       <div className="text-center my-10">
         <input
-          type="text"
+          onChange={handleSearchChange}
+          value={searchQuery}
+          type="search"
           placeholder="search by name"
           className="input input-bordered border-purple-600 rounded-2xl w-6/12"
         />
@@ -30,7 +49,7 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {allToys.map((toy) => (
+            {filteredData.slice(0, 20).map((toy) => (
               <AllToysRow key={toy._id} toy={toy}></AllToysRow>
             ))}
           </tbody>

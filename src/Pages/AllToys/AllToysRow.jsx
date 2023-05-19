@@ -1,7 +1,7 @@
 import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const AllToysRow = ({ toy }) => {
+const AllToysRow = ({ toy, index }) => {
   const {
     _id,
     name,
@@ -16,6 +16,7 @@ const AllToysRow = ({ toy }) => {
 
   return (
     <tr>
+      <td>{index + 1}</td>
       <td>
         <div className="flex items-center space-x-3">
           <div className="avatar">
@@ -36,17 +37,17 @@ const AllToysRow = ({ toy }) => {
       </td>
       <td className="text-xl">{price} Taka</td>
       <td className="text-xl">{quantity}</td>
-      <th>
-        <span className="text-xl">{details.slice(0, 25)}...</span>
-      </th>
-      <th>
+      <td>
+        <span className="text-xl">{details.slice(0, 20)}...</span>
+      </td>
+      <td>
         <Link to={`/toyDetails/${_id}`}>
           <button className="btn ml-5">
             <FaEye />
           </button>
         </Link>
         <br />{" "}
-      </th>
+      </td>
     </tr>
   );
 };

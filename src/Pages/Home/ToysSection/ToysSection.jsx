@@ -24,21 +24,21 @@ const ToysSection = () => {
         </TabList>
 
         <TabPanel>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-4">
             {avengers.map((toy) => (
               <ToyCard key={toy._id} toy={toy}></ToyCard>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-4">
             {marvel.map((toy) => (
               <ToyCard key={toy._id} toy={toy}></ToyCard>
             ))}
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-4">
             {transformers.map((toy) => (
               <ToyCard key={toy._id} toy={toy}></ToyCard>
             ))}

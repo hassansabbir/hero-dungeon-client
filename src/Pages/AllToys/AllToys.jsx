@@ -15,8 +15,8 @@ const AllToys = () => {
     );
     setFilteredData(filteredData);
   };
-  const handleSearchChange = (e) => {
-    const query = e.target.value;
+  const handleSearchChange = (event) => {
+    const query = event.target.value;
     setSearchQuery(query);
     updateTable(query);
   };
@@ -40,6 +40,7 @@ const AllToys = () => {
           {/* head */}
           <thead>
             <tr>
+              <th>No.</th>
               <th>photo, Name & Category</th>
               <th>Seller Name & Email</th>
               <th>Price</th>
@@ -49,8 +50,8 @@ const AllToys = () => {
             </tr>
           </thead>
           <tbody>
-            {filteredData.slice(0, 20).map((toy) => (
-              <AllToysRow key={toy._id} toy={toy}></AllToysRow>
+            {filteredData.slice(0, 20).map((toy, index) => (
+              <AllToysRow key={toy._id} toy={toy} index={index}></AllToysRow>
             ))}
           </tbody>
         </table>

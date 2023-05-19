@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../../../public/logo-white.png";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import ActiveLink from "./ActiveLink";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -17,21 +18,21 @@ const Navbar = () => {
   const navBarItems = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <ActiveLink to="/">Home</ActiveLink>
       </li>
       <li>
-        <Link to="/allToys">All Toys</Link>
+        <ActiveLink to="/allToys">All Toys</ActiveLink>
       </li>
       <li>
-        <Link to="/addAToy">Add A Toy</Link>
+        <ActiveLink to="/addAToy">Add A Toy</ActiveLink>
       </li>
       {user?.email && (
         <li>
-          <Link to="/myToys">My Toys</Link>
+          <ActiveLink to="/myToys">My Toys</ActiveLink>
         </li>
       )}
       <li>
-        <Link to="/blogs">Blogs</Link>
+        <ActiveLink to="/blogs">Blogs</ActiveLink>
       </li>
     </>
   );

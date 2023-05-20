@@ -17,8 +17,8 @@ const Reviews = () => {
       <div className="divider w-60 md:w-full"></div>
       <div
         className="md:flex items-center gap-10 my-10"
-        data-aos="fade-right"
-        data-aos-duration="2000"
+        // data-aos="fade-right"
+        // data-aos-duration="2000"
       >
         <div>
           <h2 className="text-3xl font-bold">chengisIsmail</h2>
@@ -49,8 +49,8 @@ const Reviews = () => {
       <div className="divider w-60 md:w-full"></div>
       <div
         className="md:flex items-center gap-10 my-10"
-        data-aos="fade-left"
-        data-aos-duration="2000"
+        // data-aos="fade-left"
+        // data-aos-duration="2000"
       >
         <div className="flex">
           <FaQuoteLeft className=" w-6/12" />
@@ -82,8 +82,8 @@ const Reviews = () => {
       <div className="divider w-60 md:w-full"></div>
       <div
         className="md:flex items-center gap-10 my-10"
-        data-aos="fade-right"
-        data-aos-duration="2000"
+        // data-aos="fade-right"
+        // data-aos-duration="2000"
       >
         <div>
           <h2 className="text-3xl font-bold">vladDraculaTepes</h2>

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import PageTitle from "../PageTitle/PageTitle";
 
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
@@ -52,6 +53,7 @@ const AddAToy = () => {
 
   return (
     <form onSubmit={addAToy} className="hero bg-base-200">
+      <PageTitle title="Add A Toy" />
       <div className="hero-content  ">
         <div className="card shadow-2xl bg-base-100">
           <h1 className="text-5xl text-purple-600 text-center my-5 font-bold">

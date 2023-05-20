@@ -3,6 +3,7 @@ import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { updateProfile } from "firebase/auth";
+import PageTitle from "../PageTitle/PageTitle";
 
 const Register = () => {
   const { createNewUser } = useContext(AuthContext);
@@ -40,6 +41,7 @@ const Register = () => {
 
   return (
     <form onSubmit={handleRegister} className="hero min-h-screen">
+      <PageTitle title="Sign Up" />
       <div className="hero-content flex-col lg:flex-row">
         <div className="text-center lg:text-left">
           <img

@@ -6,9 +6,18 @@ const ToyCard = ({ toy }) => {
   return (
     <div className="card w-full bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
-        <img src={photo} alt="Shoes" className="rounded-xl h- w-96" />
+        <img
+          src={photo}
+          alt="Shoes"
+          className="rounded-xl h- w-96"
+          data-aos="zoom-in"
+        />
       </figure>
-      <div className="card-body items-center text-center">
+      <div
+        className="card-body items-center text-center"
+        data-aos="zoom-in"
+        data-aos-duration="2000"
+      >
         <h2 className="card-title font-bold text-4xl">{name}</h2>
         <p className="text-2xl font-bold">Price: ${price}</p>
         <p className="mr-1 text-2xl">Rating: {rating}.0</p>

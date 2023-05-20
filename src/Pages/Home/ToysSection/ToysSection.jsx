@@ -13,7 +13,11 @@ const ToysSection = () => {
 
   return (
     <div className="my-10 w-11/12 mx-auto">
-      <h1 className="text-xl md:text-5xl font-extrabold text-center my-10">
+      <h1
+        data-aos="zoom-in"
+        data-aos-duration="3000"
+        className="text-xl md:text-5xl font-extrabold text-center my-10"
+      >
         Out Products By <span className="text-purple-600 italic">Category</span>
       </h1>
       <Tabs>

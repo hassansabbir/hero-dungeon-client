@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import AllToysRow from "./AllToysRow";
 import { useState } from "react";
+import PageTitle from "../PageTitle/PageTitle";
 
 const AllToys = () => {
   const allToys = useLoaderData();
@@ -23,6 +24,7 @@ const AllToys = () => {
 
   return (
     <div>
+      <PageTitle title="All Toys" />
       <div className="text-center my-10">
         <input
           onChange={handleSearchChange}

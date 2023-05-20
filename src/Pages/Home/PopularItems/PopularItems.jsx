@@ -11,7 +11,11 @@ const PopularItems = () => {
 
   return (
     <div className="mb-28 w-full ">
-      <h2 className="text-center font-extrabold my-20 text-xl md:text-5xl">
+      <h2
+        className="text-center font-extrabold my-20 text-xl md:text-5xl"
+        data-aos="zoom-in"
+        data-aos-duration="3000"
+      >
         Our Most <span className="text-purple-600 italic">Popular </span>Toys
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -19,9 +23,14 @@ const PopularItems = () => {
           <>
             <div className="card card-compact mx-auto w-11/12 bg-base-100 shadow-xl">
               <figure>
-                <img className="rounded-xl h-64 w-64" src={toy.photo} alt="" />
+                <img
+                  className="rounded-xl h-64 w-64"
+                  src={toy.photo}
+                  alt=""
+                  data-aos="zoom-in"
+                />
               </figure>
-              <div className="card-body">
+              <div className="card-body" data-aos="zoom-in">
                 <h2 className="card-title text-3xl text-purple-600 font-bold text-center mx-auto">
                   {toy.name}
                 </h2>

@@ -3,6 +3,7 @@ import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
+import PageTitle from "../PageTitle/PageTitle";
 
 const Login = () => {
   const { signIn, googleSignIn } = useContext(AuthContext);
@@ -49,6 +50,7 @@ const Login = () => {
 
   return (
     <form onSubmit={handleLogin} className="hero min-h-screen bg-zinc-50">
+      <PageTitle title="Login" />
       <div className="hero-content flex-col lg:flex-row-reverse">
         <div className="text-center lg:text-left">
           <img

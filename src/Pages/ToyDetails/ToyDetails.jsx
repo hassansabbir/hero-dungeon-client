@@ -1,5 +1,6 @@
 import { FaStar } from "react-icons/fa";
 import { useLoaderData } from "react-router-dom";
+import PageTitle from "../PageTitle/PageTitle";
 
 const ToyDetails = () => {
   const singleToyDetails = useLoaderData();
@@ -18,6 +19,7 @@ const ToyDetails = () => {
 
   return (
     <div className="my-10 shadow-lg ">
+      <PageTitle title="Toy Details" />
       <img className="w-80 my-5 mx-auto" src={photo} alt="" />
       <h2 className="text-6xl text-purple-600 font-bold text-center">{name}</h2>
       <h3 className="text-center text-3xl">{category}</h3>

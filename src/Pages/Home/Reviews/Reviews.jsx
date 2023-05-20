@@ -14,8 +14,12 @@ const Reviews = () => {
           your needs shows in the excellent user reviews.
         </p>
       </div>
-      <div className="divider w-60 md:full"></div>
-      <div className="md:flex items-center gap-10 my-10">
+      <div className="divider w-60 md:w-full"></div>
+      <div
+        className="md:flex items-center gap-10 my-10"
+        data-aos="fade-right"
+        data-aos-duration="2000"
+      >
         <div>
           <h2 className="text-3xl font-bold">chengisIsmail</h2>
           <div className="divider w-60"></div>
@@ -42,8 +46,12 @@ const Reviews = () => {
           </p>
         </div>
       </div>
-      <div className="divider w-60 md:full"></div>
-      <div className="md:flex items-center gap-10 my-10">
+      <div className="divider w-60 md:w-full"></div>
+      <div
+        className="md:flex items-center gap-10 my-10"
+        data-aos="fade-left"
+        data-aos-duration="2000"
+      >
         <div className="flex">
           <FaQuoteLeft className=" w-6/12" />
           <p className="text-2xl">
@@ -71,8 +79,12 @@ const Reviews = () => {
           </div>
         </div>
       </div>
-      <div className="divider w-60 md:full"></div>
-      <div className="md:flex items-center gap-10 my-10">
+      <div className="divider w-60 md:w-full"></div>
+      <div
+        className="md:flex items-center gap-10 my-10"
+        data-aos="fade-right"
+        data-aos-duration="2000"
+      >
         <div>
           <h2 className="text-3xl font-bold">vladDraculaTepes</h2>
           <div className="divider w-60"></div>
@@ -100,7 +112,7 @@ const Reviews = () => {
           </p>
         </div>
       </div>
-      <div className="divider w-60 md:full"></div>
+      <div className="divider w-60 md:w-full"></div>
     </div>
   );
 };

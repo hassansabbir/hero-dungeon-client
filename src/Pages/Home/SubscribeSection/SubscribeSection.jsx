@@ -3,7 +3,11 @@ import { HiMail } from "react-icons/hi";
 
 const SubscribeSection = () => {
   return (
-    <div className="relative my-20 shadow-xl">
+    <div
+      className="relative my-20 shadow-xl"
+      data-aos="zoom-in"
+      data-aos-duration="2000"
+    >
       <img className="h-[500px]  md:w-full" src={bgImg} alt="" />
       <div className="absolute top-0 text-purple-600 right-0 bg-gradient-to-b h-[500px] md:pt-10 w-full from-white">
         <HiMail className="h-28 mx-auto w-28" />

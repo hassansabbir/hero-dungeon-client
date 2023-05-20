@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import MyToysRow from "./MyToysRow";
 import Swal from "sweetalert2";
+import PageTitle from "../PageTitle/PageTitle";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
@@ -43,6 +44,7 @@ const MyToys = () => {
 
   return (
     <div className="my-20">
+      <PageTitle title="My Toys" />
       <h2 className="text-5xl font-bold text-center">
         All the Toys added by{" "}
         <span className="text-purple-600">{user.displayName}</span>

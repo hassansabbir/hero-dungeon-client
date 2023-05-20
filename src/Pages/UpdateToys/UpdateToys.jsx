@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import PageTitle from "../PageTitle/PageTitle";
 
 const UpdateToys = () => {
   const toy = useLoaderData();
@@ -43,6 +44,7 @@ const UpdateToys = () => {
 
   return (
     <form onSubmit={handleUpdateToy} className="hero bg-base-200">
+      <PageTitle title="Update Toy" />
       <div className="hero-content  ">
         <div className="card shadow-2xl bg-base-100">
           <div className="text-4xl text-purple-600 text-center my-5 font-bold">

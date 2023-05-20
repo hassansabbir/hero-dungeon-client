@@ -21,7 +21,10 @@ const PopularItems = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {popularToys.map((toy) => (
           <>
-            <div className="card card-compact mx-auto w-11/12 bg-base-100 shadow-xl">
+            <div
+              key={toy._id}
+              className="card card-compact mx-auto w-11/12 bg-base-100 shadow-xl"
+            >
               <figure>
                 <img
                   className="rounded-xl h-64 w-64"

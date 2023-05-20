@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FaGoogle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -7,8 +7,10 @@ import PageTitle from "../PageTitle/PageTitle";
 
 const Register = () => {
   const { createNewUser } = useContext(AuthContext);
+  const [error, setError] = useState("");
 
   const handleRegister = (event) => {
+    setError("");
     event.preventDefault();
     const form = event.target;
     const name = form.name.value;
@@ -16,6 +18,10 @@ const Register = () => {
     const password = form.password.value;
     const photo = form.photo.value;
     console.log(name, email, password, photo);
+
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters");
+    }
 
     createNewUser(email, password)
       .then((res) => {
@@ -99,14 +105,14 @@ const Register = () => {
                 className="input input-bordered"
               />
             </div>
-
+            <p className="text-xl text-red-500">{error}</p>
+            <div className="form-control mt-6">
+              <button className="btn bg-red-500 border-none">Sign Up</button>
+            </div>
             <div className="divider">OR</div>
             <button className="btn btn-outline gap-2 bg-info border-none">
               <FaGoogle /> Login with Google
             </button>
-            <div className="form-control mt-6">
-              <button className="btn bg-red-500 border-none">Sign Up</button>
-            </div>
             <h2 className="font-bold text-center my-5">
               Already have an account?
               <Link to="/login" className="link ml-2 text-red-500">

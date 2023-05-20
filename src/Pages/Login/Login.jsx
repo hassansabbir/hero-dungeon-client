@@ -91,6 +91,9 @@ const Login = () => {
               </label>
             </div>
             <p className="text-red-500 font-bold">{error}</p>
+            <div className="form-control mt-6">
+              <button className="btn bg-purple-600 border-none">Login</button>
+            </div>
             <div className="divider">OR</div>
             <button
               onClick={handleGoogleLogIn}
@@ -98,9 +101,6 @@ const Login = () => {
             >
               <FaGoogle /> Login with Google
             </button>
-            <div className="form-control mt-6">
-              <button className="btn bg-purple-600 border-none">Login</button>
-            </div>
             <h2 className="font-bold text-center my-5">
               New to Hero Dungeon?
               <Link to="/register" className="link ml-2 text-purple-600">

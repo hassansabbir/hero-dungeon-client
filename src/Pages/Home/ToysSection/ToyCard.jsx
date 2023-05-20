@@ -9,15 +9,11 @@ const ToyCard = ({ toy }) => {
         <img
           src={photo}
           alt="Shoes"
-          className="rounded-xl h- w-96"
+          className="rounded-xl h-56 w-76"
           data-aos="zoom-in"
         />
       </figure>
-      <div
-        className="card-body items-center text-center"
-        data-aos="zoom-in"
-        data-aos-duration="2000"
-      >
+      <div className="card-body items-center text-center" data-aos="zoom-in">
         <h2 className="card-title font-bold text-4xl">{name}</h2>
         <p className="text-2xl font-bold">Price: ${price}</p>
         <p className="mr-1 text-2xl">Rating: {rating}.0</p>

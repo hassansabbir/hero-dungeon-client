@@ -7,13 +7,18 @@ import PageTitle from "../PageTitle/PageTitle";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
+  const [sort, setSort] = useState("true");
 
-  const url = `http://localhost:5000/allToys?email=${user?.email}`;
+  const handleSorting = () => {
+    setSort(!sort);
+  };
+
+  const url = `http://localhost:5000/allToys?email=${user?.email}&sort=${sort}`;
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
-  }, [url]);
+  }, [url, sort]);
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -57,12 +62,18 @@ const MyToys = () => {
               <th>
                 <label>Delete</label>
               </th>
-              <th>photo & Name</th>
-              <th>Seller Name & Email</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Details</th>
-              <th>Edit</th>
+              <th className="text-lg">photo & Name</th>
+              <th className="text-lg">Seller Name & Email</th>
+              <th>
+                <input
+                  onChange={handleSorting}
+                  type="checkbox"
+                  className="toggle bg-purple-600"
+                />
+              </th>
+              <th className="text-lg">Quantity</th>
+              <th className="text-lg">Details</th>
+              <th className="text-lg">Edit</th>
             </tr>
           </thead>
           <tbody>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../../public/logo-white.png";
+import logo from "../../../src/assets/logo-white.png";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import ActiveLink from "./ActiveLink";
@@ -23,13 +23,16 @@ const Navbar = () => {
       <li>
         <ActiveLink to="/allToys">All Toys</ActiveLink>
       </li>
-      <li>
-        <ActiveLink to="/addAToy">Add A Toy</ActiveLink>
-      </li>
+
       {user?.email && (
-        <li>
-          <ActiveLink to="/myToys">My Toys</ActiveLink>
-        </li>
+        <>
+          <li>
+            <ActiveLink to="/addAToy">Add A Toy</ActiveLink>
+          </li>
+          <li>
+            <ActiveLink to="/myToys">My Toys</ActiveLink>
+          </li>
+        </>
       )}
       <li>
         <ActiveLink to="/blogs">Blogs</ActiveLink>

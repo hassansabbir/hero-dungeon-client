@@ -1,4 +1,4 @@
-import bgImg from "../../../../public/6345388_3254134.jpg";
+import bgImg from "../../../../src/assets/6345388_3254134.jpg";
 import { HiMail } from "react-icons/hi";
 
 const SubscribeSection = () => {

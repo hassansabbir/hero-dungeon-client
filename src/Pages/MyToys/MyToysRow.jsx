@@ -60,7 +60,7 @@ const MyToysRow = ({ toy, handleDelete }) => {
       <td className="text-xl">{price} Taka</td>
       <td className="text-xl">{quantity}</td>
       <th>
-        <span className="text-xl">{details.slice(0, 20)}...</span>
+        <span className="text-xl">{details.slice(0, 15)}...</span>
       </th>
       <th>
         <Link to={`/updateToys/${_id}`}>

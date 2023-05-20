@@ -64,8 +64,8 @@ const Navbar = () => {
             {navBarItems}
           </ul>
         </div>
-        <img className="w-3/12" src={logo} alt="" />
-        <a className="btn btn-ghost normal-case md:text-3xl">
+        <img className="w-3/12 hidden md:block" src={logo} alt="" />
+        <a className="btn btn-ghost normal-case text-lg md:text-3xl">
           <span className="text-purple-600">Hero</span> Dungeon
         </a>
       </div>
@@ -76,7 +76,7 @@ const Navbar = () => {
         <div className="tooltip tooltip-bottom" data-tip={user?.displayName}>
           {user && (
             <img
-              className="w-12 h-12 rounded-full"
+              className="w-8 h-8 md:w-12 md:h-12 rounded-full"
               src={user.photoURL}
               alt=""
             />

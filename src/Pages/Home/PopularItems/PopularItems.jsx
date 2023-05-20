@@ -10,14 +10,14 @@ const PopularItems = () => {
   }, []);
 
   return (
-    <div className="mb-28">
-      <h2 className="text-center font-extrabold my-20 text-5xl">
+    <div className="mb-28 w-full ">
+      <h2 className="text-center font-extrabold my-20 text-xl md:text-5xl">
         Our Most <span className="text-purple-600 italic">Popular </span>Toys
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {popularToys.map((toy) => (
           <>
-            <div className="card card-compact mx-auto w-96 bg-base-100 shadow-xl">
+            <div className="card card-compact mx-auto w-11/12 bg-base-100 shadow-xl">
               <figure>
                 <img className="rounded-xl h-64 w-64" src={toy.photo} alt="" />
               </figure>

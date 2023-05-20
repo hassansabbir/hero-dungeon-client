@@ -12,12 +12,12 @@ const ToysSection = () => {
   const transformers = allToys.filter((toy) => toy.category === "Transformers");
 
   return (
-    <div className="my-10">
-      <h1 className="text-6xl font-bold text-center my-10">
-        Out Products By <span className="text-purple-600">Category</span>
+    <div className="my-10 w-11/12 mx-auto">
+      <h1 className="text-xl md:text-5xl font-extrabold text-center my-10">
+        Out Products By <span className="text-purple-600 italic">Category</span>
       </h1>
       <Tabs>
-        <TabList className="text-center my-10 text-3xl">
+        <TabList className="text-center mx-auto my-10 text-3xl">
           <Tab>The Avengers</Tab>
           <Tab>Marvel</Tab>
           <Tab>Transformers</Tab>

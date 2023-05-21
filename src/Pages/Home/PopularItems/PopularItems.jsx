@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { FaStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const PopularItems = () => {
   const [popularToys, setPopularToys] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/popularToys")
+    fetch("https://hero-dungeon-server.vercel.app/popularToys")
       .then((res) => res.json())
       .then((data) => setPopularToys(data));
   }, []);
@@ -29,7 +30,7 @@ const PopularItems = () => {
                 <img
                   className="rounded-xl h-64 w-64"
                   src={toy.photo}
-                  alt=""
+                  alt={toy.name}
                   data-aos="zoom-in"
                 />
               </figure>
@@ -63,9 +64,11 @@ const PopularItems = () => {
                   </h3>
                 </div>
                 <div className="card-actions justify-end">
-                  <button className="btn bg-purple-600 border-none">
-                    Buy Now
-                  </button>
+                  <Link to={`/toyDetails/${toy._id}`}>
+                    <button className="btn bg-purple-600 border-none">
+                      View Details
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

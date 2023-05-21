@@ -32,7 +32,7 @@ const AddAToy = () => {
     };
     console.log(newToy);
 
-    fetch("http://localhost:5000/allToys", {
+    fetch("https://hero-dungeon-server.vercel.app/allToys", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(newToy),

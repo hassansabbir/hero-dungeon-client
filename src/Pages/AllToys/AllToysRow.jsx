@@ -21,7 +21,7 @@ const AllToysRow = ({ toy, index }) => {
         <div className="flex items-center space-x-3">
           <div className="avatar">
             <div className="mask mask-squircle w-12 h-12">
-              <img src={photo} alt="" />
+              <img src={photo} alt={name} />
             </div>
           </div>
           <div>

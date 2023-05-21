@@ -35,7 +35,7 @@ const AllToys = () => {
         />
       </div>
       <h2 className="text-5xl font-bold text-center">
-        Toys added by all users
+        <span className="text-purple-600">Toys</span> added by all users
       </h2>
       <div className="overflow-x-auto my-10 w-full">
         <table className="table w-full">

@@ -8,7 +8,7 @@ const ToyCard = ({ toy }) => {
       <figure className="px-10 pt-10">
         <img
           src={photo}
-          alt="Shoes"
+          alt={name}
           className="rounded-xl h-56 w-76"
           data-aos="zoom-in"
         />

@@ -17,8 +17,8 @@ const Reviews = () => {
       <div className="divider w-60 md:w-full"></div>
       <div
         className="md:flex items-center gap-10 my-10"
-        // data-aos="fade-right"
-        // data-aos-duration="2000"
+        data-aos="flip-right"
+        data-aos-duration="3000"
       >
         <div>
           <h2 className="text-3xl font-bold">chengisIsmail</h2>
@@ -49,10 +49,10 @@ const Reviews = () => {
       <div className="divider w-60 md:w-full"></div>
       <div
         className="md:flex items-center gap-10 my-10"
-        // data-aos="fade-left"
-        // data-aos-duration="2000"
+        data-aos="flip-left"
+        data-aos-duration="3000"
       >
-        <div className="flex">
+        <div className="order-last md:order-first flex">
           <FaQuoteLeft className=" w-6/12" />
           <p className="text-2xl">
             Lolor sit amet consectetur adipisicing elit. Libero totam ducimus
@@ -65,8 +65,7 @@ const Reviews = () => {
           </p>
         </div>
         <div className="divider divider-horizontal" />
-
-        <div>
+        <div className="order-first md:order-last">
           <h2 className="text-3xl font-bold">issacForgemaster</h2>
           <div className="divider w-60"></div>
           <p className="text-2xl text-center">May 2022</p>
@@ -82,8 +81,8 @@ const Reviews = () => {
       <div className="divider w-60 md:w-full"></div>
       <div
         className="md:flex items-center gap-10 my-10"
-        // data-aos="fade-right"
-        // data-aos-duration="2000"
+        data-aos="flip-right"
+        data-aos-duration="3000"
       >
         <div>
           <h2 className="text-3xl font-bold">vladDraculaTepes</h2>

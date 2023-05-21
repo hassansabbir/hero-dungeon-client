@@ -20,7 +20,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () => fetch("http://localhost:5000/allToys"),
+        loader: () => fetch("https://hero-dungeon-server.vercel.app/allToys"),
       },
       {
         path: "/toyDetails/:id",
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
           </PrivetRout>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allToys/${params.id}`),
+          fetch(`https://hero-dungeon-server.vercel.app/allToys/${params.id}`),
       },
       {
         path: "/allToys",
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
             <AllToys></AllToys>
           </PrivetRout>
         ),
-        loader: () => fetch("http://localhost:5000/allToys"),
+        loader: () => fetch("https://hero-dungeon-server.vercel.app/allToys"),
       },
       {
         path: "/addAToy",
@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         path: "/updateToys/:id",
         element: <UpdateToys></UpdateToys>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allToys/${params.id}`),
+          fetch(`https://hero-dungeon-server.vercel.app/allToys/${params.id}`),
       },
       {
         path: "/blogs",

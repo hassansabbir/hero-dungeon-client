@@ -23,7 +23,7 @@ const UpdateToys = () => {
     };
     console.log(updateToy);
 
-    fetch(`http://localhost:5000/allToys/${_id}`, {
+    fetch(`https://hero-dungeon-server.vercel.app/allToys/${_id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(updateToy),
@@ -105,7 +105,7 @@ const UpdateToys = () => {
               ></textarea>
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-purple-600">Add Toy</button>
+              <button className="btn bg-purple-600">Update</button>
             </div>
           </div>
         </div>

@@ -5,7 +5,7 @@ const Reviews = () => {
     <div className="my-20 p-3">
       <div>
         <h1 className="text-4xl ml-5 md:text-6xl font-extrabold">
-          Excellent users <br />{" "}
+          Excellent user <br />{" "}
           <span className=" text-purple-600 italic">reviews</span>
         </h1>
         <div className="divider w-60 md:w-3/12"></div>
